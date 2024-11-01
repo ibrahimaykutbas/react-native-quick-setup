@@ -4,24 +4,28 @@ React Native Quick Setup, hazırladığınız özel bir template ile React Nativ
 
 ## Kurulum
 
-Öncelikle, index.js dosyasının çalıştırılabilir olması için gerekli izinleri ayarlayın:
+Bu depoyu yerel makinenizde klonlayın.
+
+```
+https://github.com/ibrahimaykutbas/react-native-quick-setup/
+```
+
+Projeyi klonladıktan sonra ilgili dizine gidin.
+
+```
+cd react-native-quick-setup
+```
+
+Projeyi çalıştırılabilir olması için gerekli izinleri ayarlayın:
 
 ```
 chmod +x index.js
 ```
 
-## Paket Olarak Yayınlamak
 
-Paketinizi npm üzerinde yayınlamak için şu adımları takip edebilirsiniz:
+### Yerel Olarak Çalıştırmak
 
-```
-npm login
-npm publish
-```
-
-## Lokal Olarak Çalıştırmak
-
-Geliştirme aşamasında paketi lokal olarak test etmek için:
+Geliştirme aşamasında paketi yerel olarak test etmek için:
 
 ```
 npm link
