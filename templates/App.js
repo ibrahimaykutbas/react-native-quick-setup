@@ -1,11 +1,11 @@
 module.exports = `
-import React from 'react'
-import RootNavigator from './src/navigation/RootNavigator'
+import React from 'react';
+import RootNavigator from './src/navigation/RootNavigator';
 
 const App = () => {
-  return <RootNavigator />
-}
+  return <RootNavigator />;
+};
 
-export default App
+export default App;
 
 `
