@@ -25,10 +25,10 @@ const askAppName = async () => {
 const createApp = async () => {
   const APP_NAME = (await askAppName()) || 'MyApp'
 
-  const appPath = `./Desktop/${APP_NAME}`
+  const APP_PATH = `./Desktop/${APP_NAME}`
   rl.close()
 
-  if (fs.existsSync(appPath)) {
+  if (fs.existsSync(APP_PATH)) {
     // Eğer aynı isimden proje oluşturulduysa o proje dizinine geçiyoruz
     process.chdir(`./Desktop/${APP_NAME}`)
     console.log(`Changed directory to ${APP_NAME}`)
@@ -36,10 +36,11 @@ const createApp = async () => {
     return true
   }
 
-  fs.mkdirSync(appPath, { recursive: true })
-  console.log(`Created folder: ${appPath}`)
+  fs.mkdirSync(APP_PATH, { recursive: true })
+  console.log(`Created folder: ${APP_PATH}`)
 
   const command = `cd Desktop && npx react-native init ${APP_NAME}`
+
   console.log(`Running: ${command}`)
   execSync(command, { stdio: 'inherit' })
   console.log('App created successfully!')
@@ -59,6 +60,7 @@ const installDependencies = async () => {
 
   const command = `npm install ${dependencies.join(' ')}`
   const pod = 'cd ios && pod install && cd ..'
+
   console.log(`Running: ${command}`)
   execSync(command, { stdio: 'inherit' })
   console.log('Dependencies installed successfully!')
@@ -109,6 +111,7 @@ const createFiles = async () => {
 
 const openVSCode = async () => {
   const command = `code .`
+
   console.log(`Running: ${command}`)
   execSync(command, { stdio: 'inherit' })
   console.log('Opened VSCode')
@@ -126,6 +129,9 @@ const run = async () => {
     console.log('FAILED')
     console.log(error)
     console.log('------------------------------------')
+  } finally {
+    console.log('🎉 All operations completed successfully!')
+    console.log('💻 Happy coding!')
   }
 }
 
