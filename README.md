@@ -40,6 +40,3 @@ npx react-native-quick-setup
 ```
 
 Bu komut, belirlediğiniz dizin ve dosya yapılarını oluşturacak ve gerekli ayarlamaları yapacaktır. İster paket olarak yayınlayarak, ister lokal bağlantı ile projelerinizde hızlıca kullanabilirsiniz.
-# react-native-quick-setup
-# react-native-quick-setup
-# react-native-quick-setup
