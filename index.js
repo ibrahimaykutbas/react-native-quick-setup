@@ -39,7 +39,7 @@ const createApp = async () => {
   fs.mkdirSync(APP_PATH, { recursive: true });
   console.log(`Created folder: ${APP_PATH}`);
 
-  const command = `npx react-native init ${APP_NAME}`;
+  const command = `npx @react-native-community/cli@latest init ${APP_NAME}`;
 
   console.log(`Running: ${command}`);
   execSync(command, { stdio: "inherit" });
