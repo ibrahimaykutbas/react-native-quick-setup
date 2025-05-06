@@ -25,12 +25,13 @@ const askAppName = async () => {
 const createApp = async () => {
   const APP_NAME = (await askAppName()) || 'MyApp'
 
-  const APP_PATH = `./Desktop/${APP_NAME}`
+  const CURRENT_PATH = process.cwd()
+  const APP_PATH = `${CURRENT_PATH}/${APP_NAME}`
   rl.close()
 
   if (fs.existsSync(APP_PATH)) {
     // Eğer aynı isimden proje oluşturulduysa o proje dizinine geçiyoruz
-    process.chdir(`./Desktop/${APP_NAME}`)
+    process.chdir(APP_PATH)
     console.log(`Changed directory to ${APP_NAME}`)
 
     return true
@@ -39,14 +40,14 @@ const createApp = async () => {
   fs.mkdirSync(APP_PATH, { recursive: true })
   console.log(`Created folder: ${APP_PATH}`)
 
-  const command = `cd Desktop && npx react-native init ${APP_NAME}`
+  const command = `npx @react-native-community/cli@latest init ${APP_NAME}`
 
   console.log(`Running: ${command}`)
   execSync(command, { stdio: 'inherit' })
   console.log('App created successfully!')
 
   // Proje dizinine geçiyoruz
-  process.chdir(`./Desktop/${APP_NAME}`)
+  process.chdir(APP_PATH)
   console.log(`Changed directory to ${APP_NAME}`)
 }
 
